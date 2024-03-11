@@ -1,4 +1,5 @@
-import { BeakerIcon, Bars3BottomRightIcon } from '@heroicons/react/24/solid'
+import { BeakerIcon, Bars3BottomRightIcon,XMarkIcon } from '@heroicons/react/24/solid'
+import { useState } from 'react'
 
 
 
@@ -9,8 +10,10 @@ function Header() {
         {name: 'About', link: '/'},
         {name: 'Contact', link: '/'}
     ]
+
+    let [isOpen, setisOpen] = useState(false);
   return (
-    <div className="shadow-md w-full bg-white fixed top-0 left-0">
+    <div className="shadow-md w-full bg-white fixed top-0 left-0 ">
         <div className="md:px-10 py-4 px-7 md:flex justify-between items-center">
             {/* logo here */}
             <div className='flex text-2xl cursor-pointer items-center gap-1'>
@@ -18,8 +21,11 @@ function Header() {
                 <span className='font-bold'>Inscribe</span>
             </div>
 
-            <div className='w-7 h-7 absolute right-8 top-6 cursor-pointer'>
-                <Bars3BottomRightIcon />
+            <div onClick={() => setisOpen(!isOpen)} className='w-7 h-7 absolute right-8 top-6 cursor-pointer md:hidden'>
+                {
+                    isOpen ? <XMarkIcon /> : <Bars3BottomRightIcon />
+                }
+              
             </div>
 
 
