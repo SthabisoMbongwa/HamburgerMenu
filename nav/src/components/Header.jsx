@@ -1,4 +1,4 @@
-import { BeakerIcon } from '@heroicons/react/24/solid'
+import { BeakerIcon, Bars3BottomRightIcon } from '@heroicons/react/24/solid'
 
 
 
@@ -17,6 +17,12 @@ function Header() {
                 <BeakerIcon className='w-7 h-7 text-blue-600'/>
                 <span className='font-bold'>Inscribe</span>
             </div>
+
+            <div className='w-7 h-7 absolute right-8 top-6 cursor-pointer'>
+                <Bars3BottomRightIcon />
+            </div>
+
+
                 <ul className='md:flex pl-9 md:pl-0'>    
                     {
                         Links.map(link => (
@@ -24,7 +30,7 @@ function Header() {
                             <a href='/'>{link.name}</a>
                         </li>))
                     }
-                    <button className='btn bg-blue-600 text-white py-1 px-3 md:ml-8'>
+                    <button className='btn bg-blue-600 text-white py-1 px-3 md:ml-8 rounded md:static'>
                         Get Started
                     </button>
                 </ul>
