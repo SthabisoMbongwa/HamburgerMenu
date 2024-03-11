@@ -1,11 +1,12 @@
-
+import Header from './components/Header'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-blue-500 text-4xl'>Hello, there!</h1>
+      <Header />
+      <div className='bg-indigo-600 w-full h-screen'></div>
     </>
   )
 }
